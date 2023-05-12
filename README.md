@@ -1,3 +1,4 @@
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 [![license](https://img.shields.io/badge/license-GPL--2-lightgrey.svg)](https://choosealicense.com/)
@@ -10,17 +11,20 @@ Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)
 ## Overview
 
 `extractNSEC` package extracts the NSEC estimate from supported fitted
-frequentest (drc) and Bayesian (bayesnec) model objects (see Fox
-(2010)<https://setac.onlinelibrary.wiley.com/doi/full/10.1002/etc.5610?af=R>).
+frequentest (drc) and Bayesian (bayesnec) model objects. For more
+details see [Fisher & Fox
+(2023)](https://setac.onlinelibrary.wiley.com/doi/full/10.1002/etc.5610?af=R%3E).
 
 ## Installation
 
 The current development version can be downloaded from GitHub via
 
-    if (!requireNamespace("remotes")) {
-      install.packages("remotes")
-    }
-    remotes::install_github("open-aims/extractNSEC", ref = "main")
+``` r
+if (!requireNamespace("remotes")) {
+  install.packages("remotes")
+}
+remotes::install_github("open-aims/extractNSEC", ref = "main")
+```
 
 ## Usage
 
@@ -30,6 +34,6 @@ Usage and further information about `extractNSEC` can be seen on the
 
 ## Further Information
 
-`bayesnec` is provided by the [Australian Institute of Marine
+`extractNSEC` is provided by the [Australian Institute of Marine
 Science](https://www.aims.gov.au) under the GPL-2 License
 ([GPL-2](https://opensource.org/license/gpl-2-0/)).
