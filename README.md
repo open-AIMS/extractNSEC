@@ -1,4 +1,3 @@
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 [![license](https://img.shields.io/badge/license-GPL--2-lightgrey.svg)](https://choosealicense.com/)
@@ -19,12 +18,10 @@ details see [Fisher & Fox
 
 The current development version can be downloaded from GitHub via
 
-``` r
-if (!requireNamespace("remotes")) {
-  install.packages("remotes")
-}
-remotes::install_github("open-aims/extractNSEC", ref = "main")
-```
+    if (!requireNamespace("remotes")) {
+      install.packages("remotes")
+    }
+    remotes::install_github("open-aims/extractNSEC", ref = "main")
 
 ## Usage
 
