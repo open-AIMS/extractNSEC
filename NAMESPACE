@@ -2,6 +2,7 @@
 
 S3method(nsec,bayesmanecfit)
 S3method(nsec,bayesnecfit)
+S3method(nsec,brmsfit)
 S3method(nsec,drc)
 export(bnec_newdata.drc)
 export(nsec)
