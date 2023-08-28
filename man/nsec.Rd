@@ -2,24 +2,23 @@
 % Please edit documentation in R/nsec.R
 \name{nsec}
 \alias{nsec}
-\title{Extracts the predicted NSEC value from supported classes.}
+\title{Extracts the predicted NSEC value as desired from an object of class
+\code{\link{bayesnecfit}} or \code{\link{bayesmanecfit}}.}
 \usage{
 nsec(
   object,
   sig_val = 0.01,
   precision = 1000,
-  posterior = FALSE,
   x_range = NA,
   hormesis_def = "control",
   xform = identity,
-  prob_vals = c(0.5, 0.025, 0.975)
+  prob_vals = c(0.5, 0.025, 0.975),
+  ...
 )
 }
 \arguments{
-\item{object}{An object of class currently supported. Includes
-\code{\link{bayesnecfit}} or
-\code{\link{bayesmanecfit}} returned by \code{\link{bnec}} or
-\code{\link{drc}} returned by \code{\link{drc}}.}
+\item{object}{An object of class \code{\link{bayesnecfit}} or
+\code{\link{bayesmanecfit}} returned by \code{\link{bnec}}.}
 
 \item{sig_val}{Probability value to use as the lower quantile to test
 significance of the predicted posterior values.
@@ -28,10 +27,6 @@ estimate NEC as an interpolated NOEC value from smooth ECx curves.}
 
 \item{precision}{The number of unique x values over which to find NSEC -
 large values will make the NSEC estimate more precise.}
-
-\item{posterior}{A \code{\link[base]{logical}} value indicating if the full
-posterior sample of calculated NSEC values should be returned instead of
-just the median and 95 credible intervals. Not relevant to \code{\link{drc}}}
 
 \item{x_range}{A range of x values over which to consider extracting NSEC.}
 
@@ -44,22 +39,29 @@ values.}
 \item{prob_vals}{A vector indicating the probability values over which to
 return the estimated NSEC value. Defaults to 0.5 (median) and 0.025 and
 0.975 (95 percent credible intervals).}
+
+\item{...}{Further arguments to pass to class specific methods.}
 }
 \value{
 A vector containing the estimated NSEC value, including upper and
 lower 95\% credible interval bounds.
 }
 \description{
-Extracts the predicted NSEC value from supported classes.
+Extracts the predicted NSEC value as desired from an object of class
+\code{\link{bayesnecfit}} or \code{\link{bayesmanecfit}}.
 }
 \details{
 For \code{hormesis_def}, if "max", then NSEC values are calculated
 as a decline from the maximum estimates (i.e. the peak at NEC);
-if "control", then ECx values are calculated relative to the control, which
-is assumed to be the lowest observed concentration. Not current supported for
-\code{\link{drc}} fits.
+if "control", then NSEC values are calculated relative to the control, which
+is assumed to be the lowest observed concentration.
 
-The argument \code{precision} controls how precisely the
+Calls to functions \code{\link{ecx}} and \code{\link{nsec}} and
+\code{\link{compare_fitted}} do not require the same level of flexibility
+in the context of allowing argument \code{newdata}
+(from a \code{\link[brms]{posterior_predict}} perspective) to
+be supplied manually, as this is and should be handled within the function
+itself. The argument \code{precision} controls how precisely the
 \code{\link{ecx}} or \code{\link{nsec}} value is estimated, with
 argument \code{x_range} allowing estimation beyond the existing range of
 the observed data (otherwise the default range) which can be useful in a
@@ -76,4 +78,7 @@ data(manec_example)
 nsec(manec_example)
 }
 
+}
+\seealso{
+\code{\link{bnec}}
 }

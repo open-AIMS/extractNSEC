@@ -29,7 +29,7 @@ Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)
 
 ## Overview 
 
-`extractNSEC` package extracts the NSEC estimate from supported fitted frequentest (drc) and Bayesian (bayesnec) model objects. For more details see [Fisher & Fox (2023)](https://setac.onlinelibrary.wiley.com/doi/full/10.1002/etc.5610?af=R>).
+`extractNSEC` package extracts the NSEC estimate from supported fitted frequentest (drc) and Bayesian (bayesnec) model objects. For more details see [Fisher & Fox (2023)](https://doi.org/10.1002/etc.5610).
 
 ## Installation
 
